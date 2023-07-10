@@ -16,6 +16,8 @@
 		AC7B4B832A5BB0C700485641 /* RiskRudderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7B4B822A5BB0C700485641 /* RiskRudderUITestsLaunchTests.swift */; };
 		AC7B4B902A5BB2A100485641 /* PersonalDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7B4B8F2A5BB2A100485641 /* PersonalDetailsView.swift */; };
 		AC7B4B922A5BD06300485641 /* AddInvestmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7B4B912A5BD06300485641 /* AddInvestmentView.swift */; };
+		AC7B4B942A5C8C5100485641 /* Investment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7B4B932A5C8C5100485641 /* Investment.swift */; };
+		AC7B4B982A5CA7F800485641 /* InvestmentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7B4B972A5CA7F800485641 /* InvestmentManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		AC7B4B822A5BB0C700485641 /* RiskRudderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskRudderUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		AC7B4B8F2A5BB2A100485641 /* PersonalDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDetailsView.swift; sourceTree = "<group>"; };
 		AC7B4B912A5BD06300485641 /* AddInvestmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInvestmentView.swift; sourceTree = "<group>"; };
+		AC7B4B932A5C8C5100485641 /* Investment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Investment.swift; sourceTree = "<group>"; };
+		AC7B4B972A5CA7F800485641 /* InvestmentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +103,9 @@
 			isa = PBXGroup;
 			children = (
 				AC7B4B652A5BB0C600485641 /* RiskRudderApp.swift */,
+				AC7B4B972A5CA7F800485641 /* InvestmentManager.swift */,
 				AC7B4B672A5BB0C600485641 /* DashboardView.swift */,
+				AC7B4B932A5C8C5100485641 /* Investment.swift */,
 				AC7B4B8F2A5BB2A100485641 /* PersonalDetailsView.swift */,
 				AC7B4B912A5BD06300485641 /* AddInvestmentView.swift */,
 				AC7B4B692A5BB0C700485641 /* Assets.xcassets */,
@@ -263,8 +269,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC7B4B982A5CA7F800485641 /* InvestmentManager.swift in Sources */,
 				AC7B4B682A5BB0C600485641 /* DashboardView.swift in Sources */,
 				AC7B4B902A5BB2A100485641 /* PersonalDetailsView.swift in Sources */,
+				AC7B4B942A5C8C5100485641 /* Investment.swift in Sources */,
 				AC7B4B662A5BB0C600485641 /* RiskRudderApp.swift in Sources */,
 				AC7B4B922A5BD06300485641 /* AddInvestmentView.swift in Sources */,
 			);
