@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AC7B4B662A5BB0C600485641 /* RiskRudderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7B4B652A5BB0C600485641 /* RiskRudderApp.swift */; };
+		AC7B4B682A5BB0C600485641 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7B4B672A5BB0C600485641 /* ContentView.swift */; };
+		AC7B4B6A2A5BB0C700485641 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC7B4B692A5BB0C700485641 /* Assets.xcassets */; };
+		AC7B4B6D2A5BB0C700485641 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC7B4B6C2A5BB0C700485641 /* Preview Assets.xcassets */; };
+		AC7B4B772A5BB0C700485641 /* RiskRudderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7B4B762A5BB0C700485641 /* RiskRudderTests.swift */; };
+		AC7B4B812A5BB0C700485641 /* RiskRudderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7B4B802A5BB0C700485641 /* RiskRudderUITests.swift */; };
+		AC7B4B832A5BB0C700485641 /* RiskRudderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7B4B822A5BB0C700485641 /* RiskRudderUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AC7B4B732A5BB0C700485641 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC7B4B5A2A5BB0C600485641 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC7B4B612A5BB0C600485641;
+			remoteInfo = RiskRudder;
+		};
+		AC7B4B7D2A5BB0C700485641 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC7B4B5A2A5BB0C600485641 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC7B4B612A5BB0C600485641;
+			remoteInfo = RiskRudder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AC7B4B622A5BB0C600485641 /* RiskRudder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RiskRudder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC7B4B652A5BB0C600485641 /* RiskRudderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskRudderApp.swift; sourceTree = "<group>"; };
+		AC7B4B672A5BB0C600485641 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AC7B4B692A5BB0C700485641 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AC7B4B6C2A5BB0C700485641 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AC7B4B722A5BB0C700485641 /* RiskRudderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RiskRudderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC7B4B762A5BB0C700485641 /* RiskRudderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskRudderTests.swift; sourceTree = "<group>"; };
+		AC7B4B7C2A5BB0C700485641 /* RiskRudderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RiskRudderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC7B4B802A5BB0C700485641 /* RiskRudderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskRudderUITests.swift; sourceTree = "<group>"; };
+		AC7B4B822A5BB0C700485641 /* RiskRudderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskRudderUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AC7B4B5F2A5BB0C600485641 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC7B4B6F2A5BB0C700485641 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC7B4B792A5BB0C700485641 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AC7B4B592A5BB0C600485641 = {
+			isa = PBXGroup;
+			children = (
+				AC7B4B642A5BB0C600485641 /* RiskRudder */,
+				AC7B4B752A5BB0C700485641 /* RiskRudderTests */,
+				AC7B4B7F2A5BB0C700485641 /* RiskRudderUITests */,
+				AC7B4B632A5BB0C600485641 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AC7B4B632A5BB0C600485641 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC7B4B622A5BB0C600485641 /* RiskRudder.app */,
+				AC7B4B722A5BB0C700485641 /* RiskRudderTests.xctest */,
+				AC7B4B7C2A5BB0C700485641 /* RiskRudderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC7B4B642A5BB0C600485641 /* RiskRudder */ = {
+			isa = PBXGroup;
+			children = (
+				AC7B4B652A5BB0C600485641 /* RiskRudderApp.swift */,
+				AC7B4B672A5BB0C600485641 /* ContentView.swift */,
+				AC7B4B692A5BB0C700485641 /* Assets.xcassets */,
+				AC7B4B6B2A5BB0C700485641 /* Preview Content */,
+			);
+			path = RiskRudder;
+			sourceTree = "<group>";
+		};
+		AC7B4B6B2A5BB0C700485641 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AC7B4B6C2A5BB0C700485641 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AC7B4B752A5BB0C700485641 /* RiskRudderTests */ = {
+			isa = PBXGroup;
+			children = (
+				AC7B4B762A5BB0C700485641 /* RiskRudderTests.swift */,
+			);
+			path = RiskRudderTests;
+			sourceTree = "<group>";
+		};
+		AC7B4B7F2A5BB0C700485641 /* RiskRudderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AC7B4B802A5BB0C700485641 /* RiskRudderUITests.swift */,
+				AC7B4B822A5BB0C700485641 /* RiskRudderUITestsLaunchTests.swift */,
+			);
+			path = RiskRudderUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AC7B4B612A5BB0C600485641 /* RiskRudder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC7B4B862A5BB0C700485641 /* Build configuration list for PBXNativeTarget "RiskRudder" */;
+			buildPhases = (
+				AC7B4B5E2A5BB0C600485641 /* Sources */,
+				AC7B4B5F2A5BB0C600485641 /* Frameworks */,
+				AC7B4B602A5BB0C600485641 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RiskRudder;
+			productName = RiskRudder;
+			productReference = AC7B4B622A5BB0C600485641 /* RiskRudder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AC7B4B712A5BB0C700485641 /* RiskRudderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC7B4B892A5BB0C700485641 /* Build configuration list for PBXNativeTarget "RiskRudderTests" */;
+			buildPhases = (
+				AC7B4B6E2A5BB0C700485641 /* Sources */,
+				AC7B4B6F2A5BB0C700485641 /* Frameworks */,
+				AC7B4B702A5BB0C700485641 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC7B4B742A5BB0C700485641 /* PBXTargetDependency */,
+			);
+			name = RiskRudderTests;
+			productName = RiskRudderTests;
+			productReference = AC7B4B722A5BB0C700485641 /* RiskRudderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AC7B4B7B2A5BB0C700485641 /* RiskRudderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC7B4B8C2A5BB0C700485641 /* Build configuration list for PBXNativeTarget "RiskRudderUITests" */;
+			buildPhases = (
+				AC7B4B782A5BB0C700485641 /* Sources */,
+				AC7B4B792A5BB0C700485641 /* Frameworks */,
+				AC7B4B7A2A5BB0C700485641 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC7B4B7E2A5BB0C700485641 /* PBXTargetDependency */,
+			);
+			name = RiskRudderUITests;
+			productName = RiskRudderUITests;
+			productReference = AC7B4B7C2A5BB0C700485641 /* RiskRudderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AC7B4B5A2A5BB0C600485641 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					AC7B4B612A5BB0C600485641 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					AC7B4B712A5BB0C700485641 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = AC7B4B612A5BB0C600485641;
+					};
+					AC7B4B7B2A5BB0C700485641 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = AC7B4B612A5BB0C600485641;
+					};
+				};
+			};
+			buildConfigurationList = AC7B4B5D2A5BB0C600485641 /* Build configuration list for PBXProject "RiskRudder" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AC7B4B592A5BB0C600485641;
+			productRefGroup = AC7B4B632A5BB0C600485641 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AC7B4B612A5BB0C600485641 /* RiskRudder */,
+				AC7B4B712A5BB0C700485641 /* RiskRudderTests */,
+				AC7B4B7B2A5BB0C700485641 /* RiskRudderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AC7B4B602A5BB0C600485641 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC7B4B6D2A5BB0C700485641 /* Preview Assets.xcassets in Resources */,
+				AC7B4B6A2A5BB0C700485641 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC7B4B702A5BB0C700485641 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC7B4B7A2A5BB0C700485641 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AC7B4B5E2A5BB0C600485641 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC7B4B682A5BB0C600485641 /* ContentView.swift in Sources */,
+				AC7B4B662A5BB0C600485641 /* RiskRudderApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC7B4B6E2A5BB0C700485641 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC7B4B772A5BB0C700485641 /* RiskRudderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC7B4B782A5BB0C700485641 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC7B4B812A5BB0C700485641 /* RiskRudderUITests.swift in Sources */,
+				AC7B4B832A5BB0C700485641 /* RiskRudderUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AC7B4B742A5BB0C700485641 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC7B4B612A5BB0C600485641 /* RiskRudder */;
+			targetProxy = AC7B4B732A5BB0C700485641 /* PBXContainerItemProxy */;
+		};
+		AC7B4B7E2A5BB0C700485641 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC7B4B612A5BB0C600485641 /* RiskRudder */;
+			targetProxy = AC7B4B7D2A5BB0C700485641 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AC7B4B842A5BB0C700485641 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AC7B4B852A5BB0C700485641 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AC7B4B872A5BB0C700485641 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RiskRudder/Preview Content\"";
+				DEVELOPMENT_TEAM = PTAUHZ2E6Z;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = energy.inertial.RiskRudder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AC7B4B882A5BB0C700485641 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RiskRudder/Preview Content\"";
+				DEVELOPMENT_TEAM = PTAUHZ2E6Z;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = energy.inertial.RiskRudder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AC7B4B8A2A5BB0C700485641 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PTAUHZ2E6Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = energy.inertial.RiskRudderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RiskRudder.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RiskRudder";
+			};
+			name = Debug;
+		};
+		AC7B4B8B2A5BB0C700485641 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PTAUHZ2E6Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = energy.inertial.RiskRudderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RiskRudder.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RiskRudder";
+			};
+			name = Release;
+		};
+		AC7B4B8D2A5BB0C700485641 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PTAUHZ2E6Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = energy.inertial.RiskRudderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RiskRudder;
+			};
+			name = Debug;
+		};
+		AC7B4B8E2A5BB0C700485641 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PTAUHZ2E6Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = energy.inertial.RiskRudderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RiskRudder;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AC7B4B5D2A5BB0C600485641 /* Build configuration list for PBXProject "RiskRudder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC7B4B842A5BB0C700485641 /* Debug */,
+				AC7B4B852A5BB0C700485641 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC7B4B862A5BB0C700485641 /* Build configuration list for PBXNativeTarget "RiskRudder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC7B4B872A5BB0C700485641 /* Debug */,
+				AC7B4B882A5BB0C700485641 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC7B4B892A5BB0C700485641 /* Build configuration list for PBXNativeTarget "RiskRudderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC7B4B8A2A5BB0C700485641 /* Debug */,
+				AC7B4B8B2A5BB0C700485641 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC7B4B8C2A5BB0C700485641 /* Build configuration list for PBXNativeTarget "RiskRudderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC7B4B8D2A5BB0C700485641 /* Debug */,
+				AC7B4B8E2A5BB0C700485641 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AC7B4B5A2A5BB0C600485641 /* Project object */;
+}
