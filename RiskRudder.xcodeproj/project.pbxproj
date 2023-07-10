@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		AC7B4B662A5BB0C600485641 /* RiskRudderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7B4B652A5BB0C600485641 /* RiskRudderApp.swift */; };
-		AC7B4B682A5BB0C600485641 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7B4B672A5BB0C600485641 /* ContentView.swift */; };
+		AC7B4B682A5BB0C600485641 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7B4B672A5BB0C600485641 /* DashboardView.swift */; };
 		AC7B4B6A2A5BB0C700485641 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC7B4B692A5BB0C700485641 /* Assets.xcassets */; };
 		AC7B4B6D2A5BB0C700485641 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC7B4B6C2A5BB0C700485641 /* Preview Assets.xcassets */; };
 		AC7B4B772A5BB0C700485641 /* RiskRudderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7B4B762A5BB0C700485641 /* RiskRudderTests.swift */; };
 		AC7B4B812A5BB0C700485641 /* RiskRudderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7B4B802A5BB0C700485641 /* RiskRudderUITests.swift */; };
 		AC7B4B832A5BB0C700485641 /* RiskRudderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7B4B822A5BB0C700485641 /* RiskRudderUITestsLaunchTests.swift */; };
+		AC7B4B902A5BB2A100485641 /* PersonalDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7B4B8F2A5BB2A100485641 /* PersonalDetailsView.swift */; };
+		AC7B4B922A5BD06300485641 /* AddInvestmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7B4B912A5BD06300485641 /* AddInvestmentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,7 @@
 /* Begin PBXFileReference section */
 		AC7B4B622A5BB0C600485641 /* RiskRudder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RiskRudder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC7B4B652A5BB0C600485641 /* RiskRudderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskRudderApp.swift; sourceTree = "<group>"; };
-		AC7B4B672A5BB0C600485641 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AC7B4B672A5BB0C600485641 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		AC7B4B692A5BB0C700485641 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC7B4B6C2A5BB0C700485641 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AC7B4B722A5BB0C700485641 /* RiskRudderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RiskRudderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +46,8 @@
 		AC7B4B7C2A5BB0C700485641 /* RiskRudderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RiskRudderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC7B4B802A5BB0C700485641 /* RiskRudderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskRudderUITests.swift; sourceTree = "<group>"; };
 		AC7B4B822A5BB0C700485641 /* RiskRudderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskRudderUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AC7B4B8F2A5BB2A100485641 /* PersonalDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDetailsView.swift; sourceTree = "<group>"; };
+		AC7B4B912A5BD06300485641 /* AddInvestmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInvestmentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +99,9 @@
 			isa = PBXGroup;
 			children = (
 				AC7B4B652A5BB0C600485641 /* RiskRudderApp.swift */,
-				AC7B4B672A5BB0C600485641 /* ContentView.swift */,
+				AC7B4B672A5BB0C600485641 /* DashboardView.swift */,
+				AC7B4B8F2A5BB2A100485641 /* PersonalDetailsView.swift */,
+				AC7B4B912A5BD06300485641 /* AddInvestmentView.swift */,
 				AC7B4B692A5BB0C700485641 /* Assets.xcassets */,
 				AC7B4B6B2A5BB0C700485641 /* Preview Content */,
 			);
@@ -257,8 +263,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC7B4B682A5BB0C600485641 /* ContentView.swift in Sources */,
+				AC7B4B682A5BB0C600485641 /* DashboardView.swift in Sources */,
+				AC7B4B902A5BB2A100485641 /* PersonalDetailsView.swift in Sources */,
 				AC7B4B662A5BB0C600485641 /* RiskRudderApp.swift in Sources */,
+				AC7B4B922A5BD06300485641 /* AddInvestmentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
