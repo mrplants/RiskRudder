@@ -11,7 +11,7 @@ struct DashboardView: View {
     @State private var isEditingPersonalDetails = false
     @State private var isAddingNewInvestment = false
     
-    @ObservedObject var investmentManager = InvestmentManager()
+    @EnvironmentObject var investmentManager: InvestmentManager
     
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -42,7 +42,7 @@ struct DashboardView: View {
                         VStack(alignment: .leading) {
                             Text(investment.name)
                                 .font(.headline)
-                            Text(investment.type.rawValue.capitalized)
+                            Text(investment.type.rawValue)
                                 .font(.subheadline)
                                 .foregroundColor(.secondary)
                         }
@@ -59,19 +59,20 @@ struct DashboardView: View {
                 .onDelete(perform: removeInvestment)
             }
             
-            Button("Edit Personal Details") {
+            Button("Add Investment") {
+                isAddingNewInvestment = true
+            }
+            .sheet(isPresented: $isAddingNewInvestment) {
+                AddInvestmentView()
+            }
+            .padding()
+            Button("Edit Retirement Goal") {
                 isEditingPersonalDetails = true
             }
             .sheet(isPresented: $isEditingPersonalDetails) {
                 PersonalDetailsView()
             }
             
-            Button("Add New Investment") {
-                isAddingNewInvestment = true
-            }.padding()
-            .sheet(isPresented: $isAddingNewInvestment) {
-                AddInvestmentView()
-            }
         }
     }
 }
@@ -81,17 +82,19 @@ struct DashboardView_Previews: PreviewProvider {
         let manager = InvestmentManager()
         
         let testInvestments = [
-            Investment(id: UUID(uuidString: "00000000-0000-0000-0000-000000000001")!, type: .stocks, name: "Apple", purchaseValue: 2000, date: Date()),
-            Investment(id: UUID(uuidString: "00000000-0000-0000-0000-000000000002")!, type: .stocks, name: "Microsoft", purchaseValue: 1500, date: Date()),
-            Investment(id: UUID(uuidString: "00000000-0000-0000-0000-000000000003")!, type: .bonds, name: "US Treasury", purchaseValue: 5000, date: Date())
+            ("00000000-0000-0000-0000-000000000001", "Stocks", "Apple", 2000.0),
+            ("00000000-0000-0000-0000-000000000002", "Stocks", "Microsoft", 1500.0),
+            ("00000000-0000-0000-0000-000000000003", "Bonds", "US Treasury", 5000.0)
         ]
 
         // before setting, clear any previous investments with these IDs
-        testInvestments.forEach { manager.removeInvestments(with: $0.id) }
-        
-        // then add the test investments
-        testInvestments.forEach { manager.addInvestment($0) }
+        testInvestments.forEach { manager.removeInvestments(with: UUID(uuidString: $0.0)!) }
 
-        return DashboardView(investmentManager: manager)
+        // then add the test investments
+        testInvestments.forEach { tuple in
+            manager.addInvestment(name: tuple.2, category: tuple.1, purchaseValue: tuple.3, date: Date(), id: UUID(uuidString: tuple.0)!)
+        }
+
+        return DashboardView().environmentObject(manager)
     }
 }

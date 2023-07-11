@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PersonalDetailsView: View {
     @Environment(\.presentationMode) var presentationMode
-    @AppStorage("retirementYer") private var retirementYear: Int = 0
+    @AppStorage("retirementYear") private var retirementYear: Int = 0
     @AppStorage("retirementMonth") private var retirementMonth: Int = 0
     @AppStorage("monthlyInvestment") private var monthlyInvestment: Int = 0
     @AppStorage("monthlyRetirementPay") private var monthlyRetirementPay: Int = 0
@@ -74,6 +74,10 @@ struct PersonalDetailsView: View {
 
 struct PersonalDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        PersonalDetailsView()
+        DashboardView()
+            .sheet(isPresented: .constant(true)) {
+                PersonalDetailsView()
+            }
+            .environmentObject(InvestmentManager())
     }
 }

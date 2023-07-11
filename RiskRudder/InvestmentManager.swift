@@ -8,6 +8,8 @@
 import Foundation
 
 class InvestmentManager: ObservableObject {
+    let investmentCategories = InvestmentCategory.allCases.map({ $0.rawValue })
+
     @Published var investments = [Investment]() {
         didSet {
             let data = try? JSONEncoder().encode(investments)
@@ -25,7 +27,9 @@ class InvestmentManager: ObservableObject {
         self.investments = investments ?? []
     }
     
-    func addInvestment(_ investment: Investment) {
+    func addInvestment(name:String, category: String, purchaseValue: Double, date: Date, id:UUID? = nil) {
+        let newId = id ?? UUID()
+        let investment = Investment(id: newId, type: InvestmentCategory(rawValue: category)!, name: name, purchaseValue: purchaseValue, date: date)
         investments.append(investment)
     }
     

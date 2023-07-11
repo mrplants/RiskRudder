@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct RiskRudderApp: App {
+    var investmentManager = InvestmentManager()
+    
     var body: some Scene {
         WindowGroup {
             DashboardView()
+                .environmentObject(investmentManager)
         }
     }
 }

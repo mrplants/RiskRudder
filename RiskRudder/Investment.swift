@@ -7,11 +7,11 @@
 
 import Foundation
 
-enum InvestmentCategory: String, Codable {
-    case stocks
-    case bonds
-    case realEstate
-    case cash
+enum InvestmentCategory: String, Codable, CaseIterable {
+    case stocks = "Stocks"
+    case bonds = "Bonds"
+    case realEstate = "Real Estate"
+    case cash = "Cash"
 }
 
 struct Investment: Codable, Identifiable {
