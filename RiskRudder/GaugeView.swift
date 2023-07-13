@@ -7,19 +7,33 @@
 
 import SwiftUI
 
+// Custom gauge view component
 struct GaugeView: View {
+    // Labels for the right and left sides of the gauge.
     var rightLabel: String
     var leftLabel: String
-    @Binding var value: Double // risk value, range from 0.0 to 1.0
-    @Binding var targetRange: ClosedRange<Double>
+
+    // Binding for the risk value, which ranges from 0.0 to 1.0.
+    let value: Double
+    
+    // Binding for the target risk range.
+    var targetRange: ClosedRange<Double>
+
+    // The degrees to start and end the gauge.
     let degreesStart:Double
     let degreesEnd:Double
     
-    init(rightLabel: String, leftLabel: String, value: Binding<Double>, targetRange: Binding<ClosedRange<Double>>, degreesStart: Double = -15.0, degreesEnd: Double = -165.0) {
+    // Initializer to configure the gauge view.
+    init(rightLabel: String,
+         leftLabel: String,
+         value: Double,
+         targetRange: ClosedRange<Double>,
+         degreesStart: Double = -20.0,
+         degreesEnd: Double = -160.0) {
         self.rightLabel = rightLabel
         self.leftLabel = leftLabel
-        self._value = value
-        self._targetRange = targetRange
+        self.value = value
+        self.targetRange = targetRange
         self.degreesStart = degreesStart
         self.degreesEnd = degreesEnd
     }
@@ -27,10 +41,12 @@ struct GaugeView: View {
     var body: some View {
         GeometryReader { geometry in
             let gaugeCenter = CGPoint(x: geometry.size.width / 2, y: geometry.size.height)
-            let STROKE = geometry.size.width / 22
+            let STROKE = geometry.size.width / 70
+            let TICK_STROKE = geometry.size.width / 200
+            let TICK_LEN = geometry.size.width / 50
             let INSET = geometry.size.width / 18
             ZStack {
-                // semicircle gauge
+                // Semicircle gauge
                 Path { path in
                     path.addArc(center: gaugeCenter,
                                 radius: geometry.size.width / 2 - INSET,
@@ -40,27 +56,42 @@ struct GaugeView: View {
                 }
                 .stroke(.black, lineWidth: STROKE)
                 
-                // Target Range
+                // The ticks on the gauge
+                ForEach(0..<10) { tick in
+                    let position: Double = Double(tick) / Double(10 - 1)
+                    
+                    Path { path in
+                        path.move(to: CGPoint(x: geometry.size.width / 2,
+                                              y: geometry.size.height - (geometry.size.width / 2 - INSET)+STROKE/2 + TICK_LEN))
+                        path.addLine(to: CGPoint(x: geometry.size.width / 2,
+                                                 y: geometry.size.height - (geometry.size.width / 2 - INSET)-STROKE/2))
+                    }
+                    .stroke(.black, lineWidth: tick == 0 || tick == 9 ? STROKE : TICK_STROKE)
+                    .rotationEffect(.degrees(-(degreesEnd - degreesStart)*position+degreesEnd+90), anchor: .bottom)
+                }
+
+                // The target range indicator inside the gauge.
                 Path { path in
                     path.move(to: gaugeCenter)
                     path.addArc(center: gaugeCenter,
                                 radius: geometry.size.width / 2 - STROKE/2 - INSET,
-                                startAngle: .degrees(-(degreesEnd - degreesStart)*targetRange.lowerBound-180-degreesStart),
-                                endAngle: .degrees(-(degreesEnd - degreesStart)*targetRange.upperBound-180-degreesStart),
+                                startAngle: .degrees(-(degreesEnd - degreesStart)*targetRange.lowerBound+degreesEnd),
+                                endAngle: .degrees(-(degreesEnd - degreesStart)*targetRange.upperBound+degreesEnd),
                                 clockwise: false)
                     path.closeSubpath()
                 }
                 .fill(.black.opacity(0.2))
                 
-                // Needle
+                // The needle pointing to the current value on the gauge.
                 Path { path in
                     path.move(to: gaugeCenter)
-                    path.addLine(to: CGPoint(x: geometry.size.width / 2, y: geometry.size.height - (geometry.size.width / 2 - INSET)+STROKE/2))
+                    path.addLine(to: CGPoint(x: geometry.size.width / 2,
+                                             y: geometry.size.height - (geometry.size.width / 2 - INSET)+STROKE/2))
                 }
                 .stroke(Color(red: 0.8, green: 0.0, blue: 0.0), lineWidth: 2)
-                .rotationEffect(.degrees(-(degreesEnd - degreesStart) * self.value - 90 - degreesStart), anchor: .bottom)
+                .rotationEffect(.degrees(-(degreesEnd - degreesStart)*self.value+degreesEnd+90), anchor: .bottom)
 
-                // HIGH and LOW labels
+                // Labels for high and low values.
                 VStack {
                     Spacer()
                     HStack {
@@ -76,12 +107,22 @@ struct GaugeView: View {
     }
 }
 
+// Preview for the GaugeView.
 struct GaugeView_Previews: PreviewProvider {
     static var previews: some View {
-        GaugeView(rightLabel: "HIGH",
-                       leftLabel: "LOW",
-                       value: .constant(0.66),
-                       targetRange: .constant(0.6...0.7))
-            .previewLayout(.fixed(width: 600, height: 300))
+        Group {
+            GaugeView(rightLabel: "HIGH",
+                      leftLabel: "LOW",
+                      value: 1.0,
+                      targetRange: 0.0...1.0)
+                .previewLayout(.fixed(width: 600, height: 300))
+
+            GaugeView(rightLabel: "$13M",
+                      leftLabel: "",
+                      value: 1.0,
+                      targetRange: 0.0...1.0,
+                      degreesEnd: -180)
+                .previewLayout(.fixed(width: 600, height: 300))
+        }
     }
 }

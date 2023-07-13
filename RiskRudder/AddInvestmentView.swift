@@ -7,16 +7,25 @@
 
 import SwiftUI
 
+// A view for adding a new investment.
 struct AddInvestmentView: View {
+    // Allows the view to dismiss itself.
     @Environment(\.presentationMode) var presentationMode
+
+    // The environment object for managing investments.
     @EnvironmentObject var investmentManager: InvestmentManager
+
+    // The state variables for the investment's details.
     @State private var category = ""
     @State private var name = ""
     @State private var purchaseDate = Date()
     @State private var purchaseValue: Double = 0
+
+    // Variables for handling alert in case of form validation failure
     @State private var showingAlert = false
     @State private var alertMessage = ""
     
+    // A number formatter for currency input.
     let currencyFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
@@ -25,6 +34,7 @@ struct AddInvestmentView: View {
 
     var body: some View {
         VStack {
+            // Close button
             HStack {
                 Spacer()
                 Button(action: {
@@ -36,6 +46,8 @@ struct AddInvestmentView: View {
             }
             Text("New Investment")
                 .font(.title)
+
+            // Form for inputting investment details
             Form {
                 TextField("Name", text: $name)
                 ZStack(alignment: .leading) {
@@ -56,15 +68,16 @@ struct AddInvestmentView: View {
                     HStack {
                         Spacer()
                         Button("Submit") {
+                            // Validate form and either add investment or show alert
                             if validateForm() {
                                 investmentManager.addInvestment(name: name,
                                                                 category: category,
                                                                 purchaseValue: purchaseValue,
                                                                 date: purchaseDate)
+                                presentationMode.wrappedValue.dismiss()
                             } else {
                                 showingAlert = true
                             }
-                            presentationMode.wrappedValue.dismiss()
                         }
                         .alert(isPresented: $showingAlert) {
                             Alert(title: Text("Form Validation Error"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
@@ -77,6 +90,7 @@ struct AddInvestmentView: View {
         }
     }
     
+    // Validates the form and returns a boolean representing its validity. If invalid, sets the alert message accordingly.
     func validateForm() -> Bool {
         alertMessage = ""
         if name.isEmpty {
