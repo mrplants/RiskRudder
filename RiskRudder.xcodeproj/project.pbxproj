@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC1467D02A5CDB68009C7E61 /* GaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1467CF2A5CDB68009C7E61 /* GaugeView.swift */; };
 		AC7B4B662A5BB0C600485641 /* RiskRudderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7B4B652A5BB0C600485641 /* RiskRudderApp.swift */; };
 		AC7B4B682A5BB0C600485641 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7B4B672A5BB0C600485641 /* DashboardView.swift */; };
 		AC7B4B6A2A5BB0C700485641 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC7B4B692A5BB0C700485641 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC1467CF2A5CDB68009C7E61 /* GaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugeView.swift; sourceTree = "<group>"; };
 		AC7B4B622A5BB0C600485641 /* RiskRudder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RiskRudder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC7B4B652A5BB0C600485641 /* RiskRudderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiskRudderApp.swift; sourceTree = "<group>"; };
 		AC7B4B672A5BB0C600485641 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				AC7B4B652A5BB0C600485641 /* RiskRudderApp.swift */,
 				AC7B4B972A5CA7F800485641 /* InvestmentManager.swift */,
 				AC7B4B672A5BB0C600485641 /* DashboardView.swift */,
+				AC1467CF2A5CDB68009C7E61 /* GaugeView.swift */,
 				AC7B4B932A5C8C5100485641 /* Investment.swift */,
 				AC7B4B8F2A5BB2A100485641 /* PersonalDetailsView.swift */,
 				AC7B4B912A5BD06300485641 /* AddInvestmentView.swift */,
@@ -274,6 +277,7 @@
 				AC7B4B902A5BB2A100485641 /* PersonalDetailsView.swift in Sources */,
 				AC7B4B942A5C8C5100485641 /* Investment.swift in Sources */,
 				AC7B4B662A5BB0C600485641 /* RiskRudderApp.swift in Sources */,
+				AC1467D02A5CDB68009C7E61 /* GaugeView.swift in Sources */,
 				AC7B4B922A5BD06300485641 /* AddInvestmentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -28,11 +28,18 @@ struct DashboardView: View {
 
     var body: some View {
         VStack {
-            HStack {
-                Text("Riskometer")
+            VStack {
+                GaugeView(rightLabel: "HIGH",
+                          leftLabel: "LOW",
+                          value: .constant(0.66),
+                          targetRange: .constant(0.6...0.7))
                     .padding()
                 Spacer()
-                Text("Wealthometer")
+                GaugeView(rightLabel: "$1M",
+                          leftLabel: "",
+                          value: .constant(0.29),
+                          targetRange: .constant(0.2...0.3),
+                          degreesEnd: -180)
                     .padding()
             }
             .padding()
