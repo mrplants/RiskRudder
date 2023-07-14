@@ -42,7 +42,7 @@ struct DashboardView: View {
                 return "$\(formattedThousands)K"
             }
         }
-        return "-"
+        return "Ret."
     }
     
     /// Removes an investment from the list.
@@ -69,11 +69,10 @@ struct DashboardView: View {
                           value: 0.66,
                           targetRange: 0.6...0.7)
                     .padding()
-                Spacer()
                 GaugeView(rightLabel: formatTargetRetirement(retirementManager.targetNetRetirement),
                           leftLabel: "",
-                          value: investmentManager.netInvestmentPurchaseValue / retirementManager.targetNetRetirement,
-                          targetRange: 0.2...0.3,
+                          value: retirementManager.targetNetRetirement == 0 ? 0 : investmentManager.netInvestmentPurchaseValue / retirementManager.targetNetRetirement,
+                          targetRange: retirementManager.targetNetRetirement == 0 ? 0...1 : ((retirementManager.targetCurrentRetirementRange.lowerBound / retirementManager.targetNetRetirement)...(retirementManager.targetCurrentRetirementRange.upperBound / retirementManager.targetNetRetirement)),
                           degreesEnd: -180)
                     .padding()
             }
@@ -90,7 +89,7 @@ struct DashboardView: View {
                         }
                         Spacer()
                         VStack(alignment: .trailing) {
-                            Text("Purchased: \(investment.purchaseValue, specifier: "$%.2f")")
+                            Text("\(investment.purchaseValue, specifier: "$%.2f")")
                                 .font(.subheadline)
                             Text("\(investment.date, formatter: dateFormatter)")
                                 .font(.subheadline)
@@ -121,19 +120,24 @@ struct DashboardView: View {
 
 // Provides a preview of DashboardView with some sample investments.
 struct DashboardView_Previews: PreviewProvider {
+
     static var previews: some View {
+        let domain = Bundle.main.bundleIdentifier!
+        UserDefaults.standard.removePersistentDomain(forName: domain)
+        UserDefaults.standard.synchronize()
+
         let manager = InvestmentManager()
         let retirementManager = RetirementManager()
-        retirementManager.targetMonthlyRetirementPay = 10000
+        retirementManager.targetMonthlyRetirementPay = 5000
+        retirementManager.retirementYear = 2052
+        retirementManager.retirementMonth = 10
+        retirementManager.monthlyInvestment = 800
 
         let testInvestments = [
-            ("00000000-0000-0000-0000-000000000001", "Stocks", "Apple", 2000.0),
-            ("00000000-0000-0000-0000-000000000002", "Stocks", "Microsoft", 1500.0),
-            ("00000000-0000-0000-0000-000000000003", "Bonds", "US Treasury", 5000.0)
+            ("00000000-0000-0000-0000-000000000001", "Stocks", "Diversified Stocks", 200000.0),
+            ("00000000-0000-0000-0000-000000000003", "Bonds", "Diversified Bonds", 100000.0),
+            ("00000000-0000-0000-0000-000000000004", "Cash", "Brokerage Cash", 10000.0)
         ]
-
-        // Remove any previous investments with the same IDs before adding the test investments.
-        testInvestments.forEach { manager.removeInvestments(with: UUID(uuidString: $0.0)!) }
 
         // Add the test investments.
         testInvestments.forEach { tuple in

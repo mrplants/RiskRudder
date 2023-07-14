@@ -38,7 +38,7 @@ struct PersonalDetailsView: View {
                     Picker("Year", selection: $retirementManager.retirementYear) {
                         Text("").tag(0)
                         ForEach(2023..<2100) { year in
-                            Text("\(String(format: "%d", year))")
+                            Text("\(String(format: "%d", year))").tag(year)
                         }
                     }
 
@@ -82,10 +82,16 @@ struct PersonalDetailsView: View {
 
 struct PersonalDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        DashboardView()
+        let retirementManager = RetirementManager()
+        retirementManager.targetMonthlyRetirementPay = 10000
+        retirementManager.retirementYear = 2052
+        retirementManager.retirementMonth = 10
+        retirementManager.monthlyInvestment = 1000
+        return DashboardView()
             .sheet(isPresented: .constant(true)) {
                 PersonalDetailsView()
             }
             .environmentObject(InvestmentManager())
+            .environmentObject(retirementManager)
     }
 }

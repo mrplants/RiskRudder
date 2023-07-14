@@ -9,6 +9,8 @@ import SwiftUI
 
 // Custom gauge view component
 struct GaugeView: View {
+    @Environment(\.colorScheme) var colorScheme
+    
     // Labels for the right and left sides of the gauge.
     var rightLabel: String
     var leftLabel: String
@@ -54,7 +56,7 @@ struct GaugeView: View {
                                 endAngle: .degrees(degreesEnd),
                                 clockwise: true)
                 }
-                .stroke(.black, lineWidth: STROKE)
+                .stroke(colorScheme == .dark ? .white : .black, lineWidth: STROKE)
                 
                 // The ticks on the gauge
                 ForEach(0..<10) { tick in
@@ -66,7 +68,7 @@ struct GaugeView: View {
                         path.addLine(to: CGPoint(x: geometry.size.width / 2,
                                                  y: geometry.size.height - (geometry.size.width / 2 - INSET)-STROKE/2))
                     }
-                    .stroke(.black, lineWidth: tick == 0 || tick == 9 ? STROKE : TICK_STROKE)
+                    .stroke(colorScheme == .dark ? .white : .black, lineWidth: tick == 0 || tick == 9 ? STROKE : TICK_STROKE)
                     .rotationEffect(.degrees(-(degreesEnd - degreesStart)*position+degreesEnd+90), anchor: .bottom)
                 }
 
@@ -80,7 +82,7 @@ struct GaugeView: View {
                                 clockwise: false)
                     path.closeSubpath()
                 }
-                .fill(.black.opacity(0.2))
+                .fill((colorScheme == .dark ? .white.opacity(0.2) : .black.opacity(0.2)))
                 
                 // The needle pointing to the current value on the gauge.
                 Path { path in
@@ -88,7 +90,7 @@ struct GaugeView: View {
                     path.addLine(to: CGPoint(x: geometry.size.width / 2,
                                              y: geometry.size.height - (geometry.size.width / 2 - INSET)+STROKE/2))
                 }
-                .stroke(Color(red: 0.8, green: 0.0, blue: 0.0), lineWidth: 2)
+                .stroke(Color(red: colorScheme == .dark ? 0.8 : 1, green: 0.0, blue: 0.0), lineWidth: 2)
                 .rotationEffect(.degrees(-(degreesEnd - degreesStart)*self.value+degreesEnd+90), anchor: .bottom)
 
                 // Labels for high and low values.
