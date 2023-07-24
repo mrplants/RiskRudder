@@ -77,7 +77,16 @@ class InvestmentManager: ObservableObject {
         let investment = Investment(id: newId, type: InvestmentCategory(rawValue: category)!, name: name, purchaseValue: purchaseValue, date: date)
         investments.append(investment)
     }
-    
+
+    func EditInvestment(name:String, category: String, purchaseValue: Double, date: Date, id:UUID) {
+        let changedInvestment = Investment(id: id, type: InvestmentCategory(rawValue: category)!, name: name, purchaseValue: purchaseValue, date: date)
+        if let index = self.investments.firstIndex(where: {investment in
+            investment.id == id
+        }) {
+            investments[index] = changedInvestment
+        }
+    }
+
     /// Removes an investment from the list.
     /// - Parameter id: The unique identifier for the investment to remove.
     func removeInvestments(with id: UUID) {

@@ -14,8 +14,8 @@ struct InvestmentForm: View {
     @State private var alertMessage = ""
 
     // The state variables for the investment's details.
-    @State var category:String = ""
     @State var name:String = ""
+    @State var category:String = ""
     @State var purchaseDate:Date = Date()
     @State var purchaseValue:Double = 0
     var onSubmit: (String, String, Date, Double) -> Void = {_,_,_,_ in}
@@ -44,6 +44,7 @@ struct InvestmentForm: View {
         Form {
             TextField("Name", text: $name)
             ZStack(alignment: .leading) {
+                let _ = print(purchaseValue)
                 Text("Purchased Value")
                 TextField("Purchased Value", value: $purchaseValue, formatter: currencyFormatter)
                     .keyboardType(.decimalPad)
@@ -63,7 +64,7 @@ struct InvestmentForm: View {
                     Button("Submit") {
                         // Validate form and runs onSubmit closure
                         if validateForm() {
-                            onSubmit(category, name, purchaseDate, purchaseValue)
+                            onSubmit(name, category, purchaseDate, purchaseValue)
                         } else {
                             showingAlert = true
                         }
