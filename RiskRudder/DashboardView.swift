@@ -101,7 +101,7 @@ struct DashboardView: View {
             }
             
             Button("Add Investment") {
-                isAddingNewInvestment = true
+                isAddingNewInvestment = true 
             }
             .sheet(isPresented: $isAddingNewInvestment) {
                 AddInvestmentView()
