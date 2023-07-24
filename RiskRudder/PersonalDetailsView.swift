@@ -17,17 +17,20 @@ struct PersonalDetailsView: View {
     
     var body: some View {
         VStack {
-            // Close button
-            HStack {
-                Spacer()
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }) {
-                    Text("Done").padding()
+            ZStack {
+                // Close button
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Text("Done").padding()
+                    }
                 }
+                Text("Edit Retirement Goal")
+                    .font(.title)
+                    .padding()
             }
-            Text("Edit Retirement Goal")
-                .font(.title)
             Text("Your retirement goals and planned investments help you target risk and measure readiness.")
                 .padding()
                 .font(.body)

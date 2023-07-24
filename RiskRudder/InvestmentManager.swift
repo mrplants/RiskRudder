@@ -10,7 +10,7 @@ import Foundation
 // Manages investment-related tasks in the RiskRudder app.
 class InvestmentManager: ObservableObject {
     // Array containing all available investment categories.
-    let investmentCategories = InvestmentCategory.allCases.map({ $0.rawValue })
+    static let investmentCategories = InvestmentCategory.allCases.map({ $0.rawValue })
     
     // Sum of all investment purchaseValues
     var netInvestmentPurchaseValue: Double {
@@ -18,7 +18,33 @@ class InvestmentManager: ObservableObject {
             return investments.map{ $0.purchaseValue }.reduce(0, +)
         }
     }
-
+    
+    // Calculate investment summary
+    var investmentSummary: (Double, Double, Double, Double) {
+        get {
+            var portfolio = (0.0, 0.0, 0.0, 0.0)
+            for investment in investments {
+                switch investment.type {
+                case .cash:
+                    portfolio.0 += investment.purchaseValue
+                case .bonds:
+                    portfolio.1 += investment.purchaseValue
+                case .realEstate:
+                    portfolio.2 += investment.purchaseValue
+                case .stocks:
+                    portfolio.3 += investment.purchaseValue
+                }
+            }
+            let sum = (portfolio.0 + portfolio.1 + portfolio.2 + portfolio.3)
+            portfolio.0 = portfolio.0 / sum
+            portfolio.1 = portfolio.1 / sum
+            portfolio.2 = portfolio.2 / sum
+            portfolio.3 = portfolio.3 / sum
+            
+            return portfolio
+        }
+    }
+    
     // Published property to hold all investments. Saving to User Defaults when it's updated.
     @Published var investments = [Investment]() {
         didSet {

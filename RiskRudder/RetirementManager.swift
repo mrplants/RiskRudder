@@ -43,25 +43,65 @@ class RetirementManager: ObservableObject {
         }
     }
     
-    /// Calculated value of the user's target range right now to meet the future TargetNetRetirement
-    var targetCurrentRetirementRange: ClosedRange<Double> {
-        get {
-            
-            let lowerBound = (try? calculateTargetValue(for: 0.045)) ?? 0
-            let upperBound = (try? calculateTargetValue(for: 0.035)) ?? targetNetRetirement
-            return lowerBound...upperBound
+    // cash, bonds, real estate, stocks
+    func calculateTargetPortfolio(investmentDurationMonths:Int) -> (Double, Double, Double, Double) {
+        let investmentDurationYears = Double(investmentDurationMonths) / 12.0
+        switch investmentDurationYears {
+        case 25...:
+            return (0.05, 0.15, 0.10, 0.70)
+        case 15..<25:
+            return (0.05, 0.20, 0.10, 0.65)
+        case 5..<15:
+            return (0.05, 0.275, 0.125, 0.55)
+        case ..<5:
+            return (0.10, 0.35, 0.15, 0.40)
+        default:
+            return (0.10, 0.35, 0.15, 0.40)
         }
     }
     
-    func calculateTargetValue(for interestRate: Double) throws -> Double {
+    // Calculate rick metric given a portfolio
+    func calculateTargetRiskMetric(portfolio:(Double, Double, Double, Double)) -> Double {
+        let (_, _, _, stocks) = portfolio
+        return (stocks - 0.35) / (0.4)
+    }
+    
+    // Calculate the risk metric for the current portfolio
+    func calculateRiskMetric(portfolio:(Double, Double, Double, Double)) -> Double {
+        let targetMetric = calculateTargetRiskMetric(portfolio: calculateTargetPortfolio(investmentDurationMonths: remainingInvestmentMonths() ?? 0))
+
+        let targetPortfolio = calculateTargetPortfolio(investmentDurationMonths: remainingInvestmentMonths() ?? 0)
+        let cashDiff = portfolio.0 - targetPortfolio.0
+        let bondsDiff = targetPortfolio.1 - portfolio.1
+        let realEstateDiff = targetPortfolio.2 - portfolio.2
+        let stocksDiff = targetPortfolio.3 - portfolio.3
+        let diff = sqrt(pow(cashDiff, 2) + pow(bondsDiff, 2) + pow(realEstateDiff, 2) + pow(stocksDiff, 2))
+        if cashDiff + bondsDiff + realEstateDiff + stocksDiff < 0 {
+            // too risky
+            return min(targetMetric + diff/0.5, 1)
+        } else {
+            // not risky enough
+            return max(targetMetric - diff/0.5, 0)
+        }
+    }
+    
+    // Calculated metric for correct investment portfolio diversification
+    var targetDiversificationRange: ClosedRange<Double> {
+        get {
+            let target = calculateTargetRiskMetric(portfolio: calculateTargetPortfolio(investmentDurationMonths: remainingInvestmentMonths() ?? 0))
+            return (target - 0.04)...(target+0.04)
+        }
+    }
+
+    // This is optional because the retirement personal information may not be setup
+    func remainingInvestmentMonths() -> Int? {
         let currentDate = Date()
         let calendar = Calendar.current
         var targetDateComponents = DateComponents()
         targetDateComponents.year = retirementYear
         targetDateComponents.month = retirementMonth
         guard let targetDate = calendar.date(from: targetDateComponents) else {
-            print("Could not create target date from components")
-            throw RetirementError.invalidTargetDate
+            return nil
         }
         
         // Calculate the difference in months
@@ -69,12 +109,29 @@ class RetirementManager: ObservableObject {
                                                            from: currentDate,
                                                            to: targetDate)
         guard let differenceInMonths = differenceComponents.month else {
-            print("Could not calculate difference in months.")
-            throw RetirementError.cannotCalculateDifference
+            return nil
+        }
+        return differenceInMonths
+    }
+    
+    /// Calculated value of the user's target range right now to meet the future TargetNetRetirement
+    var targetCurrentRetirementRange: ClosedRange<Double> {
+        get {
+            
+            let lowerBound = (calculateTargetValue(for: 0.05)) ?? 0
+            let upperBound = (calculateTargetValue(for: 0.03)) ?? targetNetRetirement
+            return lowerBound...upperBound
+        }
+    }
+    
+    func calculateTargetValue(for interestRate: Double) -> Double? {
+        
+        guard let differenceInMonths = remainingInvestmentMonths() else {
+            return nil
         }
         
         if differenceInMonths < 0 {
-            throw RetirementError.negativeDifference
+            return nil
         }
         
         let monthlyRate = Double(pow((1 + interestRate), 1/12))
